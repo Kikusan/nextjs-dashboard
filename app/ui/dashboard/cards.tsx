@@ -5,7 +5,6 @@ import {
   InboxIcon,
 } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
-
 const iconMap = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
@@ -34,11 +33,11 @@ export function Card({
   title,
   value,
   type,
-}: {
+}: Readonly<{
   title: string;
   value: number | string;
   type: 'invoices' | 'customers' | 'pending' | 'collected';
-}) {
+}>) {
   const Icon = iconMap[type];
 
   return (
